@@ -219,7 +219,7 @@ end
 function M.anchor(width, height)
   local anchor = ""
   local lines_above = vim.fn.screenrow() - 1
-  local lines_below = vim.fn.winheight(0) - lines_above
+  local lines_below = vim.go.lines - lines_above
 
   if height < lines_below then
     anchor = anchor .. "N"
